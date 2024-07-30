@@ -1,25 +1,46 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import { useState } from 'react'
+import Scorecard from './scorecard';
+import Game from './game';
+import Gameover from './gameover';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+const App = () => {
+  const [plyruns,setPlyruns]=useState(0);
+  const [cpuruns,setCpuruns]=useState(0);
+  const [flag,setFlag]=useState(true)
+  const scorehandler = (bat)=>{
+    
+    setTimeout(runshandler(bat), 500);
+    
+  };
+
+  const runshandler = (bat) => {
+    const newcpuruns = cpuscorehandler();
+    if (bat === newcpuruns) {
+      setFlag(false);
+    } else {
+      setPlyruns(plyruns + bat);
+    }
+  };
+  const cpuscorehandler=()=>{
+    setCpuruns(0);
+    const numbers = [0, 1, 2, 3, 4, 5, 6, 10];
+    const randomIndex = Math.floor(Math.random() * numbers.length);
+
+    setCpuruns(numbers[randomIndex])
+    return (numbers[randomIndex]);
+  };
+  const gamehandler = ()=>{
+    setFlag(true);
+    setPlyruns(0);
+  };
+
+    return (
+    <div>
+      <Scorecard Plyruns={plyruns} Cpuruns={cpuruns}/>
+      {flag ? <Game Plyruns={plyruns} Cpuruns={cpuruns} scorehandler={scorehandler}/> : <Gameover Plyruns={plyruns}  gamehandler={gamehandler}/>}
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
