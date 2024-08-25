@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+
+.outer{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: 60vh;
+    z-index: 3;
+}
+.gameover{
+    border-radius: 30px;
+    padding: 10%;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    color: red;
+    font-family: "Luckiest Guy", cursive;
+    width: 50%;
+    justify-content: center;
+    background-color: white;
+}
+.gameover img{
+    height: 40vh;
+}
+.scores{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    height: 20vh;
+}
+.scores div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-shadow: 5px 5px 5px black;
+}
+.scores h2{
+    font-size: medium;
+}
+.scores h3{
+    font-size: large;
+}
+.replay{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@media (max-width:550px) {
+    
+}
