@@ -1,0 +1,317 @@
+.game{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 30vh;
+    background-size: auto;
+    z-index: 2;
+}
+.match{
+    z-index: 2;
+}
+.matchprocess{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    z-index: 2;
+}
+.over{
+    background-color: darkslateblue;
+    color: aliceblue;
+    border-radius: 5px;
+    width: 90px;
+    height: 30px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    text-shadow: 2px 3px 5px black;
+    position: relative;
+    z-index: 2;
+}
+.balls{
+    display: flex;
+    z-index: 2;
+}
+.run{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: darkslateblue;
+    color: aliceblue;
+    border-radius: 50%;
+    text-shadow: 2px 3px 5px black;
+    margin: 5px;
+    width: 20px;
+    height: 20px;
+}
+
+.match{
+    width: 100%;
+    margin: 0px;
+    z-index: 2;
+}
+.match_status{
+    display: flex;
+    box-shadow: 5px,5px,10px,black;
+    border-radius: 25px;
+    background-color: brown;
+    color: white;
+    margin: 10px;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+}
+
+.playerside ,.cpuside{
+    /*background: linear-gradient(to left, rgba(60, 244, 72, 1)0%, rgba(255, 255, 255, 0)30%);*/
+    margin: 0;
+    display: flex;
+    flex: 1;
+    width: 40%;
+    font-size: 5rem;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: visible;
+    box-sizing: border-box; /* Include padding in width/height */
+    padding: 0;
+}
+.face{
+    position: absolute;
+    height: 75%;
+    width: 100%;
+    top: 0;
+    right: 9%;
+    background-image: url(../img/robotface.png);
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position: left;
+    transform-origin: left;
+    transform: rotate(15deg);
+    z-index: 1;
+}
+/* .aura{
+    position: absolute;
+    background: radial-gradient(ellipse farthest-corner at center left,  rgb(244, 60, 60,1)45%, rgba(255, 255, 255, 0)50%);
+    width: 100%;
+    height: 100%;
+}
+.playerside .aura{
+    background: radial-gradient(ellipse farthest-corner at center right, rgba(60, 244, 72, 1)0%, rgba(255, 255, 255, 0)70%);
+} */
+
+.cpufinger img , .plyfinger img{
+    display: block;
+    height: 40vh;
+    width: auto;
+    mix-blend-mode: lighten;
+    padding: 0;
+    margin: 0 auto;
+    object-fit: cover;
+    box-sizing: border-box; 
+    z-index: 2;
+
+    /* filter: sepia(100%) hue-rotate(50deg) saturate(1000%); */
+    
+
+}
+.cpufinger, .plyfinger{
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    height: 40vh;
+    
+}
+.shake{
+    animation: shake 1s;
+    mix-blend-mode: lighten;
+    z-index: 2;
+}
+.shakeright{
+    animation: shakeright 1s;
+    mix-blend-mode: lighten;
+    z-index: 2;
+}
+.cpufinger img{
+    transform: scaleX(-1);
+}
+
+.plyface{
+    position: absolute;
+    height: 75%;
+    width: 100%;
+    top: 0;
+    left: 9%;
+    background-image: url(../img/playerface.png);
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position: right;
+    transform-origin: right;
+    transform: rotate(-15deg);
+    z-index: 2;
+}
+.num{
+    height: 50px;
+    width: 50px;
+    margin: 20px;
+    font-size: 2rem;
+    background-color: green;
+    border: 2px solid black;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    z-index: 2;
+    box-shadow: 3px 3px 5px black;
+}
+.red{
+    height: 50px;
+    width: 50px;
+    margin: 20px;
+    font-size: 2rem;
+    background-color:tomato;
+    border: 2px solid black;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    z-index: 2;
+    box-shadow: 3px 3px 5px black;
+
+}
+.div{
+    display: flex;
+}
+.choice{
+    display: flex;
+    flex-wrap: wrap;
+    height: 20vh;
+    align-items: center;
+    justify-content: space-around;
+    height: 30vh;
+}
+.shot{
+    display: flex;
+    align-items: center;
+    width: 120px;
+    
+}
+.shot img{
+    width: 120px;
+    animation: fadeInOut 1s ease-in-out;
+    z-index: 3;
+
+}
+.background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1; /* Behind the game content */
+    opacity: 0.7; /* Adjust opacity to suit your design */
+  }
+   
+@keyframes fadeInOut {
+    0% {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    100% {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+  }
+  @keyframes shake {
+    0% { transform: translateY(0) rotate(0deg); }
+    25% { transform: translateY(-50px) rotate(-10deg); }
+    50% { transform:  translateY(50px) rotate(10deg); }
+    75% { transform: translateY(-50px)rotate(-10deg); }
+    100% { transform: translateY(0) rotate(0deg); }
+  }
+  @keyframes shakeright {
+    0% { transform: translateY(0) rotate(0deg); }
+    25% { transform: translateY(-50px) rotate(10deg); }
+    50% { transform:  translateY(50px) rotate(-10deg); }
+    75% { transform: translateY(-50px)rotate(10deg); }
+    100% { transform: translateY(0) rotate(0deg); }
+  }
+  
+  
+  
+@media (max-width:550px) {
+    .plyface{
+        position: absolute;
+        height: 75px;
+        width: 75px;
+        top: -90%;
+        right: 5%;
+        left: auto;
+        border-radius: 50%;
+        background-image: url(../img/playerface.png);
+        background-size: auto 100%;
+        background-repeat: no-repeat;
+        background-position: right;
+        transform-origin: right;
+        transform: rotate(-15deg);
+        z-index: 1;
+    }
+    .face{
+        position: absolute;
+        height: 75px;
+        width: 75px;
+        top: -90%;
+        left: 5%;
+        right: auto;
+        border-radius: 50%;
+        background-image: url(../img/robotface.png);
+        background-size: auto 100%;
+        background-repeat: no-repeat;
+        background-position: left;
+        transform-origin: left;
+        transform: rotate(15deg);
+        z-index: 1;
+    }
+    .cpufinger img, .plyfinger img {
+        display: block;
+        height: 20vh; /* Adjusted height for mobile */
+        width: 175px; /* Ensures aspect ratio is maintained */
+        mix-blend-mode: lighten;
+        padding: 0;
+        margin: 0 auto;
+        object-fit: cover;
+        box-sizing: border-box;
+    }
+    .cpufinger, .plyfinger{
+        display: flex;
+        align-items: center;
+        justify-content: center; 
+        height: 20vh;
+        width: 175px;
+        
+    }
+    .shot{
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 30vh;
+        position: absolute;
+        z-index: 3;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        
+    }
+    .shot img{
+        width: 90px;
+        animation: fadeInOut 1s ease-in-out;
+        z-index: 3;
+    
+    }
+}

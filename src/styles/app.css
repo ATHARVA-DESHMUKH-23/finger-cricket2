@@ -1,0 +1,90 @@
+.main{
+    height: 100vh;
+    background-image: url('../img/stadium.jpg') ;
+    background-color: cadetblue;
+    background-position: center;
+    background-size: 105%;
+    background-repeat:no-repeat;
+    overflow: hidden;
+    z-index: -2;
+}
+.main1{
+  height: 100vh;
+  background-image: url('../img/stadium2.jpg') ;
+  background-position: center;
+  background-size: 100%;
+  background-repeat:no-repeat;
+  overflow: hidden;
+  z-index: -2;
+}
+.celebration{
+    /* background: url('../video/celebration.mp4') no-repeat center center; */
+    animation: shaker 0.5s;
+    z-index: -1;
+}
+.background-celebration4-video{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the video covers the entire section */
+    z-index: 1;
+    /* mix-blend-mode: lighten; */
+}
+.background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the video covers the entire section */
+    z-index: 1;
+    /* mix-blend-mode: lighten; */
+  }
+  .background-starting-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the video covers the entire section */
+    z-index: 1;
+  }
+@keyframes shaker {
+    0% { transform:scale(1) translateY(0) translateX(0)}
+    15% { transform:scale(1.01) translateY(0px) translateX(-5px) }
+    30% { transform:scale(1.01) translateY(5px) translateX(0) }
+    45% { transform:scale(1.01) translateY(0) translateX(5px) }
+    60% { transform: scale(1.01) translateY(-5px) translateX() }
+    75% { transform:scale(1.01) translateY(0)translateX(-5px) }
+    100% { transform:scale(1) translateY(0) translateX(0)}
+
+  }
+@media (max-width: 600px) {
+    .main{
+        height: 100vh;
+        background-image: url('../img/stadium.jpg') ;
+        background-position: center;
+        background-size:  cover;
+        background-repeat:no-repeat;
+        overflow: hidden;
+    } 
+    .main1{
+      height: 100vh;
+      width: auto;
+      background-image: url('../img/stadium1.jpg') ;
+      background-position: center;
+      background-size: cover;
+      background-repeat:no-repeat;
+      overflow:hidden;
+  } 
+  .background-celebration4-video,
+  .background-video {
+      width: 100%;
+      height: 100vh;
+      object-fit: cover; 
+      background-position: center;
+  }
+
+}

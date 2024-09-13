@@ -1,0 +1,87 @@
+.toss {
+    display: flex;
+    height: 60vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center; 
+    height: 40%;
+    width: 40%;
+    max-width: 300px;
+    padding: 50px;
+    background-image: url(../img/toss-background.jpeg);
+    background-size:100% 100%;
+    background-color: burlywood;
+    border-radius: 25%;
+    box-shadow: 10px 5px 10px black;
+    text-align: center;
+    z-index: 2;
+}
+.tossing{
+    width: 100%;
+}
+.option{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.option button{
+    height: 30px;
+    width: 70px;
+    display:block;
+
+}
+
+h1 {
+    color: azure;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 0px rgb(0, 0, 0);
+}
+.coinchoice{
+    width: 100%;
+}
+
+.choicebutton {
+    display: flex;
+    justify-content: space-around;
+    width: 100%; 
+}
+
+button {
+    margin-top: 10px;
+    padding: 5px;
+    width: 80px;
+    background-color: rgb(255, 13, 13);
+    border-radius: 50%;
+    color: aliceblue;
+}
+/* From Uiverse.io by Gautammsharma */ 
+
+  
+ 
+.content img {
+    width: 50px;
+    height: 50px;
+    margin-top: 10px;
+    border-radius: 50%;
+    box-shadow: 5px 5px 10px black;
+  }
+  p{padding: 0px 5px;
+    border-radius: 25px;
+    text-shadow: 2px 1.5px 0.5px black;
+    color: azure;
+  }
+  #coinvideo{
+    width: 50px;
+    height: auto;
+    border-radius: 60%;
+  }
+@media (max-width:500px) {
+    
+}
